@@ -5,7 +5,11 @@ const balanceDisplay = document.querySelector("#balance");
 const form = document.querySelector("#form");
 const inputTransactionAmount = document.querySelector("#amount");
 const inputTransactionName = document.querySelector("#text");
+const btn = document.querySelector(".btn")
 
+const btnAlerta = () => {
+    swal("Atenção!", "Preencha todos os campos abaixo.", "error");
+}
 
 const localStorageTransactions = JSON.parse(localStorage
     .getItem('transactions'));
@@ -98,7 +102,7 @@ const handleFormSubmit = event => {
     const isSomeInputEmpty = transactionName === '' || transactionAmount === '';
 
     if (isSomeInputEmpty) {
-        alert("Por favor, preencha tanto o nome quanto o valor da transação!");
+        btnAlerta();
         return
     }
     addToTransactionsArray(transactionName, transactionAmount);
