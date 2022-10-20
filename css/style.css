@@ -21,6 +21,7 @@ body {
 
 .container {
   margin: 30px auto;
+  padding: 13px;
   width: 350px;
 }
 
@@ -89,6 +90,8 @@ input[type='number'] {
   font-size: 16px;
   padding: 10px;
   width: 100%;
+  color: #FDFDFD;
+  font-weight: bold;
 }
 #text, #amount{
   background-color: #212133;
@@ -130,6 +133,8 @@ input[type='number'] {
   position: relative;
   padding: 10px;
   margin: 10px 0;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .transactions li.plus {
@@ -147,15 +152,14 @@ input[type='number'] {
   color: #fff;
   font-size: 20px;
   line-height: 20px;
-  padding: 2px 5px;
+  padding: 10px 3px;
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(-100%, -50%);
   opacity: 0;
+  transform: translate(-100%, -50%);
   transition: opacity 0.3s ease;
 }
-
-.transactions li:hover .delete-btn {
+.transactions li:hover .delete-btn{
   opacity: 1;
 }
