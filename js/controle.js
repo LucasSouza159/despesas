@@ -13,13 +13,14 @@ let transactions = localStorage
     .getItem("transactions") !== null ? localStorageTransactions : [];
 
 const removeTransaction = ID => {
-    transactions = transactions.filter(transaction =>
-        ID !== ID);
+    transactions = transactions
+        .filter(transaction =>
+            transaction.id !== ID);
     updateLocalStorage();
     init();
 }
 
-const addTransactionIntoDOM = ({amount, name, id}) => {
+const addTransactionIntoDOM = ({ amount, name, id }) => {
     const operator = amount < 0 ? '-' : '+';
     const CSSClass = amount < 0 ? 'minus' : 'plus';
     const amountWithoutOperator = Math.abs(amount);
@@ -53,7 +54,7 @@ const getTotal = transactionAmount => transactionAmount
 
 
 const updateBalanceValues = () => {
-    const transactionAmount = transactions.map(({amount}) => amount);
+    const transactionAmount = transactions.map(({ amount }) => amount);
     const total = getTotal(transactionAmount);
     const income = getIncome(transactionAmount);
     const expense = getExpenses(transactionAmount);
